@@ -1,2 +1,2 @@
-# PokemonTypeCombos
-A modification of my Delphi code which I improved using C# with enums
+- The builds folder has the .exe to run the application.
+- Code can be found in the .cs file
