@@ -1,2 +1,2 @@
 - The builds folder has the .exe to run the application.
-- Code can be found in the .cs file
+- Code can be found in the Form1.cs file
