@@ -2,6 +2,8 @@ namespace PokemonTypeCombos
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
+
+        //all pokemon types
         public enum PokemonTypes
         {
             Normal, Fighting, Flying, Poison,
@@ -10,6 +12,7 @@ namespace PokemonTypeCombos
             Electric, Psychic, Ice, Dragon,
             Dark, Fairy
         }
+        //arrays to store each types attributes
         public float[] ArrOutput1 = new float[18];
         public float[] ArrOutput2 = new float[18];
         public Form1()
@@ -25,7 +28,11 @@ namespace PokemonTypeCombos
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbx2.Items.Add("None");
+            //ease of use for users who want to type themselves
+            cmbx1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbx2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 
+            //adds all the types into the dropdown lists
             foreach (var item in Enum.GetNames<PokemonTypes>())
             {
                 cmbx1.Items.Add(item);
@@ -37,6 +44,16 @@ namespace PokemonTypeCombos
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            //fills array values with defaut value of 1
+            /*
+             * number values in the array have meaning.
+             * value 1 = normally effetive
+             * value 2 = super effective
+             * value 4 = 4x effective 
+             * value 0.5 = not very effective
+             * value 0.25 = extremely resistant
+             */
+
             for (int i = 0; i < ArrOutput1.Length; i++)
             {
                 ArrOutput1[i] = 1;
@@ -46,6 +63,7 @@ namespace PokemonTypeCombos
             {
                 return;
             } 
+
             FindStrengthsAndWeaknesses(ArrOutput1, cmbx1.Text);
             FindStrengthsAndWeaknesses(ArrOutput2 , cmbx2.Text);
             DisplayInfo(); 
@@ -108,7 +126,8 @@ namespace PokemonTypeCombos
 
 
         private Boolean CatchErrors()
-        {         
+        {   
+            //catches errors made in the combobox which are mandatory for data processing
             if (cmbx1.SelectedIndex <= -1) 
             {
                 MessageBox.Show("incorrect info in box1");
@@ -132,7 +151,7 @@ namespace PokemonTypeCombos
 
         private void FindStrengthsAndWeaknesses(float[] ArrData, string textboxdata)
         {
-
+            //each type has special attributes, this function assigns the properties according to the type the user has selected
             foreach (var item in Enum.GetValues<PokemonTypes>())
             {
                 if (item.ToString() == textboxdata)

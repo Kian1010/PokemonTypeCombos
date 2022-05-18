@@ -60,16 +60,17 @@
             // 
             // cmbx1
             // 
+            this.cmbx1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbx1.BackColor = System.Drawing.SystemColors.Window;
             this.cmbx1.DropDownHeight = 150;
             this.cmbx1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbx1.FormattingEnabled = true;
             this.cmbx1.IntegralHeight = false;
-            this.cmbx1.ItemHeight = 30;
+            this.cmbx1.ItemHeight = 37;
             this.cmbx1.Location = new System.Drawing.Point(286, 52);
             this.cmbx1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbx1.Name = "cmbx1";
-            this.cmbx1.Size = new System.Drawing.Size(254, 38);
+            this.cmbx1.Size = new System.Drawing.Size(254, 45);
             this.cmbx1.TabIndex = 2;
             this.cmbx1.Text = "Select Primary Type:";
             // 
@@ -84,7 +85,7 @@
             this.cmbx2.Location = new System.Drawing.Point(286, 148);
             this.cmbx2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbx2.Name = "cmbx2";
-            this.cmbx2.Size = new System.Drawing.Size(254, 38);
+            this.cmbx2.Size = new System.Drawing.Size(254, 45);
             this.cmbx2.TabIndex = 3;
             this.cmbx2.Text = "Select Secondary Type:";
             // 
@@ -95,7 +96,7 @@
             this.lbl1.Location = new System.Drawing.Point(321, 9);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(201, 30);
+            this.lbl1.Size = new System.Drawing.Size(244, 37);
             this.lbl1.TabIndex = 4;
             this.lbl1.Text = "Enter Primary Type:";
             this.lbl1.Click += new System.EventHandler(this.label1_Click);
@@ -107,7 +108,7 @@
             this.lbl2.Location = new System.Drawing.Point(296, 106);
             this.lbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(235, 30);
+            this.lbl2.Size = new System.Drawing.Size(284, 37);
             this.lbl2.TabIndex = 5;
             this.lbl2.Text = "Enter Secondary Type: ";
             // 
